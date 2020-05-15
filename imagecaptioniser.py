@@ -289,7 +289,7 @@ x = Dense(vocab_size)(x)
 out = Activation('softmax')(x)
 model = Model(inputs=[image_model.input, language_model.input], outputs = out)
 
-# model.load_weights("../input/model_weights.h5")
+
 model.compile(loss='categorical_crossentropy', optimizer='RMSprop', metrics=['accuracy'])
 model.summary()
 hist = model.fit([images, captions], next_words, batch_size=512, epochs=200)
